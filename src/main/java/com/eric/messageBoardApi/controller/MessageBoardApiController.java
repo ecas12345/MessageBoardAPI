@@ -1,11 +1,13 @@
 package com.eric.messageBoardApi.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,9 +25,15 @@ public class MessageBoardApiController {
 	MessageBoardApiService mbaService;
 
 	@CrossOrigin
+	@GetMapping("/AllPostsByUser/{userid}")
+	public List<Messages> fetchPostsByUser (@PathVariable String userid) {
+		return this.mbaService.getAllMessagesByUser(userid);
+	}
+	
+	@CrossOrigin
 	@GetMapping("/AllPosts")
-	public String fetchPosts () {
-		return "Fetching Posts...";
+	public List<Messages> fetchPosts () {
+		return this.mbaService.getAllMessages();
 	}
 	
 	@CrossOrigin
