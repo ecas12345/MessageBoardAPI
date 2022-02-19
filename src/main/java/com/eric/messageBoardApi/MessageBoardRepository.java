@@ -1,12 +1,11 @@
 package com.eric.messageBoardApi;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
-import com.eric.messageBoardApi.data.Post;
+import com.eric.messageBoardApi.data.messageBoardDb.dao.messagesdb.entity.Messages;
 
+public interface MessageBoardRepository extends JpaRepository<Messages, String> {
 
-@Repository
-public interface MessageBoardRepository extends MongoRepository<Post, String> {
-	
 }

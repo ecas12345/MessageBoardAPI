@@ -8,28 +8,33 @@
 		<version>2.6.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.eric</groupId>
+	<groupId>com.example</groupId>
 	<artifactId>messageBoardApi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>messageBoardApi</name>
-	<description>MessageBoardAPI</description>
+	<description>Api for my Message board app</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 	</dependencies>
 

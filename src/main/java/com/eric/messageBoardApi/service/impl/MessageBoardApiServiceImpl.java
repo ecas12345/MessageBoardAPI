@@ -3,16 +3,19 @@ package com.eric.messageBoardApi.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.eric.messageBoardApi.data.Post;
+import com.eric.messageBoardApi.MessageBoardRepository;
+import com.eric.messageBoardApi.data.messageBoardDb.dao.messagesdb.entity.Messages;
 import com.eric.messageBoardApi.service.MessageBoardApiService;
 
 @Component
 public class MessageBoardApiServiceImpl implements MessageBoardApiService {
+	
+	@Autowired MessageBoardRepository messageBoardRepo;
 
-	public List<Post> postMessage(Post post){
-		List<Post> returnPosts = new ArrayList<Post>();
-		return returnPosts;
+	public void postMessage(Messages message){
+		messageBoardRepo.saveAndFlush(message);
 	}
 }

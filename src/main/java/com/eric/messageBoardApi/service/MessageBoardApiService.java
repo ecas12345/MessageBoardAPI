@@ -2,10 +2,10 @@ package com.eric.messageBoardApi.service;
 
 import java.util.List;
 
-import com.eric.messageBoardApi.data.Post;
+import com.eric.messageBoardApi.data.messageBoardDb.dao.messagesdb.entity.Messages;
 
 public interface MessageBoardApiService {
 	
-	public List<Post> postMessage(Post post);
+	public void postMessage(Messages message);
 
 }

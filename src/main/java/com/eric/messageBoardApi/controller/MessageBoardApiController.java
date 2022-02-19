@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.eric.messageBoardApi.data.Post;
+
+import com.eric.messageBoardApi.data.messageBoardDb.dao.messagesdb.entity.Messages;
 import com.eric.messageBoardApi.service.MessageBoardApiService;
 
 @RestController
@@ -29,9 +30,9 @@ public class MessageBoardApiController {
 	
 	@CrossOrigin
 	@PostMapping("/PostMessage")
-	public List<Post> postMessage (
-			@RequestBody Post post) {
-		return this.mbaService.postMessage(post);
+	public void postMessage (
+			@RequestBody Messages message) {
+		this.mbaService.postMessage(message);
 	}
 
 
