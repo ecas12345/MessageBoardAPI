@@ -19,8 +19,7 @@ public class Messages {
 	@Column(name="messageid")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer messageid;
-	
-	@JsonProperty("userid")
+
 	@Column(name="userid")
 	private String userid;
 	
@@ -34,11 +33,11 @@ public class Messages {
 		return this.messageid;
 	}
 	
-	public String getUserId() {
+	public String getUserid() {
 		return this.userid;
 	}
 	
-	public void setUserId(String userid) {
+	public void setUserid(String userid) {
 		this.userid = userid;
 	}
 	
