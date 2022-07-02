@@ -25,7 +25,7 @@ public class MessageBoardApiController {
 
 	@CrossOrigin
 	@GetMapping("/AllPostsByUser")
-	public List<Messages> fetchPostsByUser (@RequestHeader String userid) {
+	public List<Messages> fetchPostsByUser (@RequestHeader("x-user-id") String userid) {
 		return this.mbaService.getAllMessagesByUser(userid);
 	}
 	
