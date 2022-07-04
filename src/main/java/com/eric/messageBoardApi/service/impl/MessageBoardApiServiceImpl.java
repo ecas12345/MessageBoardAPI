@@ -1,8 +1,10 @@
 package com.eric.messageBoardApi.service.impl;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,7 +23,9 @@ public class MessageBoardApiServiceImpl implements MessageBoardApiService {
 	}
 	
 	public List<Messages> getAllMessages() {
-		return messageBoardRepo.findAll();
+		List<Messages> allPosts = messageBoardRepo.findAll();
+		List<Messages> retList = allPosts.stream().sorted(Comparator.comparingInt(Messages::getMessageId)).collect(Collectors.toList());
+		return retList;
 	}
 
 	public void postMessage(Messages message){

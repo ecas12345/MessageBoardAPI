@@ -16,6 +16,4 @@ public interface MessageBoardRepository extends JpaRepository<Messages, String> 
 	
 	@Query(value = "Select * from messages m where m.userid = ?1", nativeQuery = true)
 	public List<Messages> findByUser(String userid);
-
-	
 }

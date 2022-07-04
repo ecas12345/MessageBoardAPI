@@ -37,7 +37,7 @@ public class MessageBoardApiController {
 	
 	@CrossOrigin
 	@PostMapping("/PostMessage")
-	public void postMessage (@RequestBody Messages message) {
+	public void postMessage (@RequestHeader("x-user-id") @RequestBody Messages message) {
 		this.mbaService.postMessage(message);
 	}
 }
